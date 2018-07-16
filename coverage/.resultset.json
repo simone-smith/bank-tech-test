@@ -17,7 +17,7 @@
         null,
         1,
         1,
-        1,
+        null,
         1,
         1,
         null,
@@ -40,6 +40,8 @@
       "/Users/simonesmith/Makers_Academy/week_10/bank-tech-test/lib/account.rb": [
         1,
         1,
+        1,
+        null,
         1,
         null,
         1,
@@ -165,6 +167,6 @@
         null
       ]
     },
-    "timestamp": 1531762753
+    "timestamp": 1531773254
   }
 }
