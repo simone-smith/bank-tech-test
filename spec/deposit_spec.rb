@@ -8,9 +8,15 @@ describe "Account" do
   end
 
   it "updates the balance when money is deposited" do
-    account.deposit(10)
+    date = Time.new(2018, 7, 15).strftime("%d/%m/%Y")
+    account.deposit(10, date)
     expect(account.balance).to eq 10
   end
 
-
+  it "stores the date of the deposit" do
+    date = Time.new(2018, 7, 16).strftime("%d/%m/%Y")
+    account.deposit(20, date)
+    expect(account.print_transaction_history).to eq %Q(date || credit || debit || balance
+      16/07/2018 || 20 ||  || 20)
+  end
 end
