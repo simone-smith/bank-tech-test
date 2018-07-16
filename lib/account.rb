@@ -1,13 +1,15 @@
 require 'date'
 require_relative 'transaction_history'
+require_relative 'printer'
 
 class Account
 
   attr_reader :balance, :transaction_history
 
-  def initialize(transaction_history = TransactionHistory.new)
+  def initialize(transaction_history = TransactionHistory.new, printer = Printer.new)
     @balance = 0
     @transaction_history = transaction_history
+    @printer = printer
   end
 
   def deposit(amount, date = Time.now.strftime("%d/%m/%Y"))
@@ -21,14 +23,7 @@ class Account
   end
 
   def print_statement
-    statement = "date || credit || debit || balance"
-    @transaction_history.log.reverse_each do |transaction|
-      statement << "\n"
-      transaction.each do |key, _value|
-        statement << "#{transaction[key]} || "
-      end
-    end
-    statement
+    @printer.print_statement(@transaction_history.log)
   end
 
 end

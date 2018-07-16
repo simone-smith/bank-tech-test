@@ -8,6 +8,8 @@ require 'account'
 describe "Printing a bank statement" do
 
   subject(:account) { Account.new }
+  subject(:transaction_history) { TransactionHistory.new }
+  subject(:printer) { Printer.new }
 
   it "shows a list of transactions, with their dates and rolling balance" do
     date1 = Time.new(2018, 7, 14).strftime("%d/%m/%Y")
