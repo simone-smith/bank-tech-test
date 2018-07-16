@@ -15,13 +15,13 @@ class Account
   end
 
   def deposit(amount, date = DATE)
-    @balance += amount
-    @transaction_history.add_transaction({ date: date, credit: amount, debit: "", balance: @balance })
+    @balance += sprintf('%.2f', amount).to_f
+    @transaction_history.add_transaction({ date: date, credit: sprintf('%.2f', amount), debit: "", balance: sprintf('%.2f', @balance)})
   end
 
   def withdraw(amount, date = DATE)
-    @balance -= amount
-    @transaction_history.add_transaction({ date: date, credit: "", debit: amount, balance: @balance })
+    @balance -= sprintf('%.2f', amount).to_f
+    @transaction_history.add_transaction({ date: date, credit: "", debit: sprintf('%.2f', amount), balance: sprintf('%.2f', @balance)})
   end
 
   def print_statement
