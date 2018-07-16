@@ -15,6 +15,10 @@ class Account
     @log.push(transaction)
   end
 
+  def withdraw(amount, date = Time.now.strftime("%d/%m/%Y"))
+    @balance -= amount
+  end
+  
   def print_transaction_history
     @log.each do |transaction|
       return %Q(date || credit || debit || balance

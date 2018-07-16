@@ -19,4 +19,11 @@ describe "Account" do
     expect(account.print_transaction_history).to eq %Q(date || credit || debit || balance
       16/07/2018 || 20 ||  || 20)
   end
+
+  it "updates the balance when money is withdrawn" do
+    date = Time.new(2018, 7, 15).strftime("%d/%m/%Y")
+    account.deposit(30, date)
+    account.withdraw(15, date)
+    expect(account.balance).to eq 15
+  end
 end
