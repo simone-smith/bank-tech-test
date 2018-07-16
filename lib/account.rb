@@ -17,13 +17,19 @@ class Account
 
   def withdraw(amount, date = Time.now.strftime("%d/%m/%Y"))
     @balance -= amount
+    transaction = { date: date, credit: "", debit: amount, balance: @balance }
+    @log.push(transaction)
   end
-  
-  def print_transaction_history
-    @log.each do |transaction|
-      return %Q(date || credit || debit || balance
-      #{transaction[:date]} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]})
+
+  def print_statement
+    statement = "date || credit || debit || balance"
+    @log.reverse_each do |transaction|
+      statement << "\n"
+      transaction.each do |key, value|
+        statement << "#{transaction[key]} || "
+      end
     end
+    statement
   end
 
 end
