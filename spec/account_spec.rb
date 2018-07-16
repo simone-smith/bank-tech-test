@@ -25,8 +25,8 @@ describe Account do
   end
 
   it "prints a statement" do
-    allow(printer).to receive(:print_statement).and_return(%Q(date || credit || debit || balance\n16/07/2018 ||  || 15 || 15 || \n16/07/2018 || 30 ||  || 30 || ))
+    allow(printer).to receive(:print_statement).and_return(%Q(date || credit || debit || balance\n16/07/2018 ||  || 15 || 15 || \n16/07/2018 || 30 ||  || 30\n))
 
-    expect(account.print_statement).to eq %Q(date || credit || debit || balance\n16/07/2018 ||  || 15 || 15 || \n16/07/2018 || 30 ||  || 30 || )
+    expect(account.print_statement).to eq %Q(date || credit || debit || balance\n16/07/2018 ||  || 15 || 15 || \n16/07/2018 || 30 ||  || 30\n)
   end
 end

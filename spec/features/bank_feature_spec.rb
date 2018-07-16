@@ -19,6 +19,6 @@ describe "Printing a bank statement" do
     account.deposit(10, date1)
     account.withdraw(5, date2)
     account.deposit(20, date3)
-    expect(account.print_statement).to eq %Q(date || credit || debit || balance\n16/07/2018 || 20 ||  || 25 || \n15/07/2018 ||  || 5 || 5 || \n14/07/2018 || 10 ||  || 10 || )
+    expect{account.print_statement}.to output(%Q(date || credit || debit || balance\n16/07/2018 || 20 ||  || 25\n15/07/2018 ||  || 5 || 5\n14/07/2018 || 10 ||  || 10\n)).to_stdout
   end
 end
