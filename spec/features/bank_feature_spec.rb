@@ -8,13 +8,13 @@ require 'account'
 describe "Printing a bank statement" do
 
   subject(:account) { Account.new }
-  subject(:transaction_history) { TransactionHistory.new }
-  subject(:printer) { Printer.new }
+  let(:transaction_history) { TransactionHistory.new }
+  let(:printer) { Printer.new }
 
   it "shows a list of transactions, with their dates and rolling balance" do
-    date1 = Time.new(2018, 7, 14).strftime("%d/%m/%Y")
-    date2 = Time.new(2018, 7, 15).strftime("%d/%m/%Y")
-    date3 = Time.new(2018, 7, 16).strftime("%d/%m/%Y")
+    date1 = Time.new(2018, 7, 14)
+    date2 = Time.new(2018, 7, 15)
+    date3 = Time.new(2018, 7, 16)
 
     account.deposit(10, date1)
     account.withdraw(5, date2)

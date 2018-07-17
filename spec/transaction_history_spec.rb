@@ -4,7 +4,7 @@ describe TransactionHistory do
 
   subject(:transaction_history) { TransactionHistory.new }
 
-  let(:date) { Time.new(2018, 7, 16).strftime("%d/%m/%Y") }
+  let(:date) { Time.new(2018, 7, 16) }
 
   it "stores a deposit in the log" do
     transaction_history.add_transaction({ date: date, credit: 20.00, balance: 20.00 })

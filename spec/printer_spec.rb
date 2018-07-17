@@ -4,7 +4,7 @@ describe Printer do
 
   subject(:printer) { Printer.new }
 
-  let(:date) { Time.new(2018, 7, 16).strftime("%d/%m/%Y") }
+  let(:date) { Time.new(2018, 7, 16) }
 
   let(:log) { [{ date: date, credit: sprintf('%.2f', 20), balance: sprintf('%.2f', 20) }, { date: date, debit: sprintf('%.2f', 15), balance: sprintf('%.2f', 5) }] }
 

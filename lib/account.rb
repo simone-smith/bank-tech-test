@@ -4,8 +4,6 @@ require_relative 'printer'
 
 class Account
 
-  DATE = Time.now.strftime("%d/%m/%Y")
-
   attr_reader :balance, :transaction_history
 
   def initialize(transaction_history = TransactionHistory.new, \
@@ -15,13 +13,13 @@ class Account
     @printer = printer
   end
 
-  def deposit(amount, date = DATE)
+  def deposit(amount, date = Time.now)
     @balance += format_number(amount).to_f
     @transaction_history.add_transaction({ date: date, credit: \
       format_number(amount), balance: format_number(@balance) })
   end
 
-  def withdraw(amount, date = DATE)
+  def withdraw(amount, date = Time.now)
     @balance -= format_number(amount).to_f
     @transaction_history.add_transaction({ date: date, \
       debit: format_number(amount), balance: format_number(@balance) })
