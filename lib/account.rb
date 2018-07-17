@@ -8,7 +8,8 @@ class Account
 
   attr_reader :balance, :transaction_history
 
-  def initialize(transaction_history = TransactionHistory.new, printer = Printer.new)
+  def initialize(transaction_history = TransactionHistory.new, \
+    printer = Printer.new)
     @balance = 0
     @transaction_history = transaction_history
     @printer = printer
@@ -16,12 +17,14 @@ class Account
 
   def deposit(amount, date = DATE)
     @balance += sprintf('%.2f', amount).to_f
-    @transaction_history.add_transaction({ date: date, credit: sprintf('%.2f', amount), debit: "", balance: sprintf('%.2f', @balance)})
+    @transaction_history.add_transaction({ date: date, credit: \
+      sprintf('%.2f', amount), debit: "", balance: sprintf('%.2f', @balance) })
   end
 
   def withdraw(amount, date = DATE)
     @balance -= sprintf('%.2f', amount).to_f
-    @transaction_history.add_transaction({ date: date, credit: "", debit: sprintf('%.2f', amount), balance: sprintf('%.2f', @balance)})
+    @transaction_history.add_transaction({ date: date, credit: "", \
+      debit: sprintf('%.2f', amount), balance: sprintf('%.2f', @balance) })
   end
 
   def print_statement
