@@ -68,6 +68,11 @@
         2,
         null,
         null,
+        1,
+        1,
+        18,
+        null,
+        null,
         null
       ],
       "/Users/simonesmith/Makers_Academy/week_10/bank-tech-test/lib/transaction_history.rb": [
@@ -163,6 +168,6 @@
         null
       ]
     },
-    "timestamp": 1531827902
+    "timestamp": 1531828525
   }
 }
