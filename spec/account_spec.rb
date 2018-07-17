@@ -14,14 +14,14 @@ describe Account do
 
   it "updates the balance when money is deposited" do
     allow(transaction_history).to receive(:add_transaction)
-    account.deposit(10, described_class::DATE)
+    account.deposit(10)
     expect(account.balance).to eq 10
   end
 
   it "updates the balance when money is withdrawn" do
     allow(transaction_history).to receive(:add_transaction)
-    account.deposit(30, described_class::DATE)
-    account.withdraw(15, described_class::DATE)
+    account.deposit(30)
+    account.withdraw(15)
     expect(account.balance).to eq 15
   end
 
