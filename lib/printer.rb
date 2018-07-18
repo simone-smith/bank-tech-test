@@ -5,16 +5,17 @@ class Printer
   DELIMITER = ' || '
 
   def print_statement(log)
-    print header + "\n"
+    row = ""
     log.reverse_each do |transaction|
-      print "#{transaction[:date].strftime("%d/%m/%Y")} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]}\n"
+      row << "#{transaction[:date].strftime("%d/%m/%Y")} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]}\n"
     end
+    print header + row
   end
 
   private
 
   def header
-    HEADER.join(DELIMITER)
+    HEADER.join(DELIMITER) + "\n"
   end
 
 end
