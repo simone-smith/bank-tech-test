@@ -23,9 +23,3 @@ class Printer
   end
 
 end
-
-# Use print/puts once.
-#
-# 1. knowledge of the header, and formatting
-# 2. it loops through the array
-# 3. has knowledge of the row formatting
