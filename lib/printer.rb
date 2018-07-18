@@ -17,7 +17,7 @@ class Printer
   def row(log)
     row = ""
     log.reverse_each do |transaction|
-      row << "#{transaction[:date].strftime("%d/%m/%Y")} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]}\n"
+      row << "#{transaction[:date].strftime("%d/%m/%Y")}#{DELIMITER}#{transaction[:credit]}#{DELIMITER}#{transaction[:debit]}#{DELIMITER}#{transaction[:balance]}\n"
     end
     row
   end
