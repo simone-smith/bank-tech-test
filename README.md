@@ -92,9 +92,13 @@ date || credit || debit || balance
 ```
 Account
   starts with a balance of 0
-  updates the balance when money is deposited
-  updates the balance when money is withdrawn
   prints a statement
+  deposit
+    updates the balance when money is deposited
+    returns the transaction log when money is deposited
+  withdraw
+    updates the balance when money is withdrawn
+    returns the transaction log when money is withdrawn
 
 Printing a bank statement
   shows a list of transactions, with their dates and rolling balance
@@ -106,11 +110,11 @@ TransactionHistory
   stores a deposit in the log
   stores a withdrawal in the log
 
-Finished in 0.02334 seconds (files took 0.30362 seconds to load)
-8 examples, 0 failures
+Finished in 0.01568 seconds (files took 0.2879 seconds to load)
+10 examples, 0 failures
 
 
-COVERAGE: 100.00% -- 78/78 lines in 7 files
+COVERAGE: 100.00% -- 99/99 lines in 7 files
 ```
 
-All tests are passing, and SimpleCov confirms that I have 100% test coverage. 
+All tests are passing, and SimpleCov confirms that I have 100% test coverage.
