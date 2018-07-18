@@ -26,12 +26,13 @@ class Account
   end
 
   def print_statement
-    @printer.print_statement(@transaction_history.log)
+    transactions = @transaction_history.log
+    @printer.print_statement(transactions)
   end
 
   private
-    def format_number(amount)
-      sprintf('%.2f', amount)
-    end
+  def format_number(amount)
+    sprintf('%.2f', amount)
+  end
 
 end
